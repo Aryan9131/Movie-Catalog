@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/3e0734b044.js" crossorigin="anonymous"></script>
+</head>
+
+<body id="body">
+  <!-- Container for the All Sections -->
+  <section class="container">
+    <section id="header" class="row">
+      <div class="col">
+        <!-- navbar HTML -->
+        <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="color: rgb(5, 5, 25); font-weight: bold;">MovieCatalog</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>     
+              </ul>
+              <form class="d-flex mt-3" role="search">
+                <input id="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </section>
+    <section class="row">
+      <!-- container for Searched Movies Suggestion -->
+      <div id="main-container" class="col-12">
+        <div class="row mt-5 mb-5" id="suggested-movies">
+          <div class="col-12 MovieTypeHeading">
+            <h2>Suggested Movies</h2>
+            <hr style="color: white;">
+          </div>
+          <div id="search-result" class="col-md-12 scroll ">
+            <h5>Noting to Show here.</h5>
+            <!-- Search Result will goes here using Javascript on runtime once we search any movie -->
+          </div>
+        </div>
+        <!-- Front Carousel Container -->
+        <div class="row" id="front-view">
+          <div class="col-md-7">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="https://cdn.wallpapersafari.com/40/56/vWgtzR.jpg" class="d-block" alt="...">
+                </div>
+                <div class="carousel-item ">
+                  <img
+                    src="https://w0.peakpx.com/wallpaper/270/433/HD-wallpaper-mortal-kombat-mortal-kombat-movie-mortal-kombat-movies-2021-movies.jpg"
+                    class="d-block" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="https://wallpaperaccess.com/full/1869531.jpg" class="d-block" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://images6.fanpop.com/image/photos/40100000/Warcraft-Movie-Wallpaper-warcraft-2016-40175818-1920-1080.jpg"
+                    class="d-block" alt="...">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Liked Movies List sideBar  will be updated on Runtime-->
+          <div class="col-md-4 likedMoviesList mt-3" style="background-color: rgb(0, 0, 0);">
+            <div class="likedList">
+              <h4>Liked Movies - Click To see Details</h4><hr>
+              <ul id="likedMoviesListItems">
+              </ul>
+            </div>
+          </div>
+        </div>
+
+         <!-- Languages Choose Option Container -->
+        <div class="row">
+          <div class="col" id="languages">
+            <a href="#top-english">English</a>
+            <a href="#top-hindi">Hindi</a>
+            <a href="#dual-Audio">Dual audio</a>
+          </div>
+        </div>
+
+       <!-- Some Static Dual-Audio Movies Suggestions Container HTML -->
+        <div class="row" id="dual-Audio">
+          <div class="col-12 MovieTypeHeading">
+            <h2>Dual-Audio Movies</h2>
+            <hr style="color: white;">
+          </div>
+          <div class="col-md-12 scroll">
+            <div class="movieCont">
+              <!-- If we click on movie then will redirect to other page called movieDetails.html which contain movie details -->
+              <a href="./movieDetails/movieDetail.html">
+                <div id="avatar" class="glass-card">
+                  <div class="data">
+                    <p class="title">Avatar: The Way of Water</p>
+                    <p id="imdb-id">tt1630029</p>
+                  </div>
+                </div>
+              </a>
+              <div class="like">
+                <i class="fa-solid fa-2x fa-heart symbol" style="color: #f89ef8;"></i>
+              </div>
+            </div>
+            
+            <div class="movieCont">
+              <a href="./movieDetails/movieDetail.html">
+                <div id="avengerEndgame" class="glass-card">
+                  <div class="data">
+                    <p class="title">Avengers: Endgame</p>
+                    <p id="imdb-id">tt4154796</p>
+                  </div>
+                </div>
+              </a>
+              <div class="like">
+                <i class="fa-solid fa-2x fa-heart symbol" style="color: #f89ef8;"></i>
+              </div>
+            </div>
+            <div class="movieCont">
+              <a href="./movieDetails/movieDetail.html">
+                <div id="persuitOfHappiness" class="glass-card">
+                  <div class="data">
+                    <p class="title">The Pursuit of Happyness</p>            
+                    <p id="imdb-id">tt0454921</p>
+                  </div>
+                </div>
+              </a>
+              <div class="like">
+                <i class="fa-solid fa-2x fa-heart symbol" style="color: #f89ef8;"></i>
+              </div>
+            </div>
+            <div class="movieCont">
+              <a href="./movieDetails/movieDetail.html">
+                <div id="inception" class="glass-card">
+                  <div class="data">
+                    <p class="title">Inception</p>                    
+                    <p id="imdb-id">tt1375666</p>
+                  </div>
+                </div>
+              </a>
+              <div class="like">
+                <i class="fa-solid fa-2x fa-heart symbol" style="color: #f89ef8;"></i>
+              </div>
+            </div>
+           <div class="movieCont">
+            <a href="./movieDetails/movieDetail.html">
+              <div id="johnWick" class="glass-card">
+                <div class="data">
+                  <p class="title">John Wick</p>          
+                  <p id="imdb-id">tt2911666</p>
+                </div>
+              </div>
+            </a>
+            <div class="like">
+              <i class="fa-solid fa-2x fa-heart symbol" style="color: #f89ef8;"></i>
+            </div>
+           </div>
+            <div class="movieCont">
+              <a href="./movieDetails/movieDetail.html">
+                <div id="matrix" class="glass-card">
+                  <div class="data">
+                    <p class="title">The Matrix</p>       
+                    <p id="imdb-id">tt0133093</p>
+                  </div>
+                </div>
+              </a>
+              <div class="like">
+                <i class="fa-solid fa-2x fa-heart symbol" style="color: #f89ef8;"></i>
+              </div>
+            </div>
+            <div class="movieCont">
+              <a href="./movieDetails/movieDetail.html">
+                <div id="casinoRoyale" class="glass-card">
+                  <div class="data">
+                    <p class="title">Casino Royale</p>                  
+                    <p id="imdb-id">tt0381061</p>
+                  </div>
+                </div>
+              </a>
+              <div class="like">
+                <i class="fa-solid fa-2x fa-heart symbol" style="color: #f89ef8;"></i>
+              </div>
+            </div>
+            <div class="movieCont">
+              <a href="./movieDetails/movieDetail.html">
+                <div id="ironMan" class="glass-card">
+                  <div class="data">
+                    <p class="title">Iron Man</p>
+                    <p id="imdb-id">tt0371746</p>
+                  </div>
+                </div>
+              </a>
+              <div class="like">
+                <i class="fa-solid fa-2x fa-heart symbol" style="color: #f89ef8;"></i>
+              </div>
+            </div>
+            <div class="movieCont">
+              <a href="./movieDetails/movieDetail.html">
+                <div id="donnotLookUp" class="glass-card">
+                  <div class="data">
+                    <p class="title">Don't Look Up</p>                
+                    <p id="imdb-id">tt11286314</p>
+                  </div>
+                </div>
+              </a>
+              <div class="like">
+                <i class="fa-solid fa-2x fa-heart symbol" style="color: #f89ef8;"></i>
+              </div>
+            </div>
+            <div class="movieCont">
+              <a href="./movieDetails/movieDetail.html">
+                <div id="jurrasicPark" class="glass-card">
+                  <div class="data">
+                    <p class="title">Jurrassic Park</p>     
+                    <p id="imdb-id">tt12176466</p>
+                  </div>
+                </div>
+              </a>
+              <div class="like">
+                <i class="fa-solid fa-2x fa-heart symbol" style="color: #f89ef8;"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+       <!-- Some Static Bollywood Movies Suggestions Container HTML -->
+        <div class="row" id="top-hindi">
+          <div class="col-12 MovieTypeHeading">
+            <h2>Bollywood Movies</h2>
+            <hr style="color: white;">
+          </div>
+          <div class="col-md-12 scroll">
+            <div class="movieCont">
+        <!-- If we click on movie then will redirect to other page called movieDetails.html which contain movie details -->
+              <a href="./movieDetails/movieDetail.html">
+                <div id="pathaan" class="glass-card">
+                  <div class="data">
+                    <p class="title">Pathaan</p>
+                    <p id="imdb-id">tt12844910</p>
+                  </div>
+                </div>
+              </a>
+              <div class="like">
+                <i class="fa-solid fa-2x fa-heart symbol" style="color: #f89ef8;"></i>
+              </div>
+            </div>
+            <div class="movieCont">
+              <a href="./movieDetails/movieDetail.html">
+                <div id="heraPheri" class="glass-card">
+                  <div class="data">
+                    <p class="title">Hera Pheri</p>
+                    <p id="imdb-id">tt0242519</p>
+                  </div>
+                </div>
+              </a>
+              <div class="like">
+                <i class="fa-solid fa-2x fa-heart symbol" style="color: #f89ef8;"></i>
+              </div>
+            </div>
+            <div class="movieCont">
+              <a href="./movieDetails/movieDetail.html">
+                <div id="badla" class="glass-card">
+                  <div class="data">
+                    <p class="title">Badla</p>
+                    <p id="imdb-id">tt8130968</p>
+                  </div>
+                </div>
+              </a>
+              <div class="like">
+                <i class="fa-solid fa-2x fa-heart symbol" style="color: #f89ef8;"></i>
+              </div>
+            </div>
+            <div class="movieCont">
+              <a href="./movieDetails/movieDetail.html">
+                <div id="rrr" class="glass-card">
+                  <div class="data">
+                    <p class="title">RRR</p>
+                    <p id="imdb-id">tt8178634</p>
+                  </div>
+                </div>
+              </a>
+              <div class="like">
+                <i class="fa-solid fa-2x fa-heart symbol" style="color: #f89ef8;"></i>
+              </div>
+            </div>
+            <div class="movieCont">
+              <a href="./movieDetails/movieDetail.html">
+                <div id="barfi" class="glass-card">
+                  <div class="data">
+                    <p class="title">Barfi!</p>
+                    <p id="imdb-id">tt2082197</p>
+                  </div>
+                </div>
+              </a>
+              <div class="like">
+                <i class="fa-solid fa-2x fa-heart symbol" style="color: #f89ef8;"></i>
+              </div>
+            </div>
+            <div class="movieCont">
+              <a href="./movieDetails/movieDetail.html">
+                <div id="ddlj" class="glass-card">
+                  <div class="data">
+                    <p class="title">Dilwale Dulhania Le Jayenge</p>
+                    <p id="imdb-id">tt0112870</p>
+                  </div>
+                </div>
+              </a>
+              <div class="like">
+                <i class="fa-solid fa-2x fa-heart symbol" style="color: #f89ef8;"></i>
+              </div>
+            </div>
+            <div class="movieCont">
+              <a href="./movieDetails/movieDetail.html">
+                <div id="bramhastra" class="glass-card">
+                  <div class="data">
+                    <p class="title">Brahmastra Part One: Shiva</p>
+                    <p id="imdb-id">tt6277462</p>
+                  </div>
+                </div>
+              </a>
+              <div class="like">
+                <i class="fa-solid fa-2x fa-heart symbol" style="color: #f89ef8;"></i>
+              </div>
+            </div>
+            <div class="movieCont">
+              <a href="./movieDetails/movieDetail.html">
+                <div id="drishyam" class="glass-card">
+                  <div class="data">
+                    <p class="title">Drishyam</p>
+                    <p id="imdb-id">tt4430212</p>
+                  </div>
+                </div>
+              </a>
+              <div class="like">
+                <i class="fa-solid fa-2x fa-heart symbol" style="color: #f89ef8;"></i>
+              </div>
+            </div>
+            <div class="movieCont">
+              <a href="./movieDetails/movieDetail.html">
+                <div id="swades" class="glass-card">
+                  <div class="data">
+                    <p class="title">Swades</p>
+                    <p id="imdb-id">tt0367110</p>
+                  </div>
+                </div>
+              </a>
+              <div class="like">
+                <i class="fa-solid fa-2x fa-heart symbol" style="color: #f89ef8;"></i>
+              </div>
+            </div>
+            <div class="movieCont">
+              <a href="./movieDetails/movieDetail.html">
+                <div id="sholay" class="glass-card">
+                  <div class="data">
+                    <p class="title">Sholay</p>
+                    <p id="imdb-id">tt0073707</p>
+                  </div>
+                </div>
+              </a>
+              <div class="like">
+                <i class="fa-solid fa-2x fa-heart symbol" style="color: #f89ef8;"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <!-- Some Static Hollywood Movies Suggestions Container HTML -->
+        <div class="row" id="top-english">
+          <div class="col-12 MovieTypeHeading">
+            <h2>Hollywood Movies</h2>
+            <hr style="color: white;">
+          </div>
+          <div class="col-md-12 scroll">
+            <div class="movieCont">
+      <!-- If we click on movie then will redirect to other page called movieDetails.html which contain movie details -->
+              <a href="./movieDetails/movieDetail.html">
+                <div id="godFather" class="glass-card">
+                  <div class="data">
+                    <p class="title">The Godfather</p>
+                    <p id="imdb-id">tt0068646</p>
+                  </div>
+                </div>
+              </a>
+              <div class="like">
+                <i class="fa-solid fa-2x fa-heart symbol" style="color: #f89ef8;"></i>
+              </div>
+            </div>
+            <div class="movieCont">
+              <a href="./movieDetails/movieDetail.html">
+                <div id="justiceLeague" class="glass-card">
+                  <div class="data">
+                    <p class="title">Justice League</p>
+                    <p id="imdb-id">tt0974015</p>
+                  </div>
+                </div>
+              </a>
+              <div class="like">
+                <i class="fa-solid fa-2x fa-heart symbol" style="color: #f89ef8;"></i>
+              </div>
+            </div>
+            <div class="movieCont">
+              <a href="./movieDetails/movieDetail.html">
+                <div id="shawshank" class="glass-card">
+                  <div class="data">
+                    <p class="title">The Shawshank Redemption</p>
+                    <p id="imdb-id">tt0111161</p>
+                  </div>
+                </div>
+              </a>
+              <div class="like">
+                <i class="fa-solid fa-2x fa-heart symbol" style="color: #f89ef8;"></i>
+              </div>
+            </div>
+            <div class="movieCont">
+              <a href="./movieDetails/movieDetail.html">
+                <div id="titanic" class="glass-card">
+                  <div class="data">
+                    <p class="title">Titanic</p>
+                    <p id="imdb-id">tt0120338</p>
+                  </div>
+                </div>
+              </a>
+              <div class="like">
+                <i class="fa-solid fa-2x fa-heart symbol" style="color: #f89ef8;"></i>
+              </div>
+            </div>
+            <div class="movieCont">
+              <a href="./movieDetails/movieDetail.html">
+                <div id="darkKnight" class="glass-card">
+                  <div class="data">
+                    <p class="title">The Dark Knight</p>
+                    <p id="imdb-id">tt0468569</p>
+                  </div>
+                </div>
+              </a>
+              <div class="like">
+                <i class="fa-solid fa-2x fa-heart symbol" style="color: #f89ef8;"></i>
+              </div>
+            </div>
+            <div class="movieCont">
+              <a href="./movieDetails/movieDetail.html">
+                <div id="fightClub" class="glass-card">
+                  <div class="data">
+                    <p class="title">Fight Club</p>
+                    <p id="imdb-id">tt0137523</p>
+                  </div>
+                </div>
+              </a>
+              <div class="like">
+                <i class="fa-solid fa-2x fa-heart symbol" style="color: #f89ef8;"></i>
+              </div>
+            </div>
+            <div class="movieCont">
+              <a href="./movieDetails/movieDetail.html">
+                <div id="forrestGump" class="glass-card">
+                  <div class="data">
+                    <p class="title">Forrest Gump</p>
+                    <p id="imdb-id">tt0109830</p>
+                  </div>
+                </div>
+              </a>
+              <div class="like">
+                <i class="fa-solid fa-2x fa-heart symbol" style="color: #f89ef8;"></i>
+              </div>
+            </div>
+           <div class="movieCont">
+            <a href="./movieDetails/movieDetail.html">
+              <div id="schindlerList" class="glass-card">
+                <div class="data">
+                  <p class="title">Schindler's List</p>
+                  <p id="imdb-id">tt0108052</p>
+                </div>
+              </a>
+            </div>
+            <div class="like">
+              <i class="fa-solid fa-2x fa-heart symbol" style="color: #f89ef8;"></i>
+            </div>
+           </div>
+          <div class="movieCont">
+            <a href="./movieDetails/movieDetail.html">
+              <div id="noCountryForOldMan" class="glass-card">
+                <div class="data">
+                  <p class="title">No Country for Old Men</p>
+                  <p id="imdb-id">tt0477348</p>
+                </div>
+              </div>
+            </a>
+            <div class="like">
+              <i class="fa-solid fa-2x fa-heart symbol" style="color: #f89ef8;"></i>
+            </div>
+          </div>
+          <div class="movieCont">
+            <a href="./movieDetails/movieDetail.html">
+              <div id="lifeIsBeautiful" class="glass-card">
+                <div class="data">
+                  <p class="title">Life Is Beautiful</p>
+                  <p id="imdb-id">tt0118799</p>
+                </div>
+              </div>
+            </a>
+            <div class="like">
+              <i class="fa-solid fa-2x fa-heart symbol" style="color: #f89ef8;"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+    <section class="row">
+      <div id="footer" class="col-10">
+        <p>Website Project by Aryan Nayak &nbsp;</p>
+        <p> &copy;2023 MovieCatalog</p>
+      </div>
+    </section>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html>
