@@ -2,7 +2,7 @@ let detailsContainer=document.getElementById('detail-container');
 console.log(detailsContainer);
 let imdbID=localStorage.getItem('movieID')+"";
 console.log(imdbID);
-fetch(`http://www.omdbapi.com/?i=${imdbID}&plot=full&apikey=1e6d9e90`).then((response)=>{
+fetch(`https://www.omdbapi.com/?i=${imdbID}&plot=full&apikey=1e6d9e90`).then((response)=>{
     return response.json();
     }).then((data)=>{
         console.log(data)
