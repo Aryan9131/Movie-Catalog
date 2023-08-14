@@ -102,13 +102,13 @@ function LikedListDisplay(){
         {
             for(let j=0;j<likedMovieList.length;j++)
             {
-             likedMovieListContainer.innerHTML+=`<a href="../likedMovieDetails/liked.html" ><li class="liked">${likedMovieList[j]}</li></a>`
+             likedMovieListContainer.innerHTML+=`<a href="./likedMovieDetails/liked.html" ><li class="liked">${likedMovieList[j]}</li></a>`
              count++;
             }
         }
         // Else if Liked movies list is already in display and contain some movies then just add the recently liked movie
         else{
-        likedMovieListContainer.innerHTML+=`<a href="../likedMovieDetails/liked.html" ><li class="liked">${likedMovieList[count]}</li></a>`
+        likedMovieListContainer.innerHTML+=`<a href="./likedMovieDetails/liked.html" ><li class="liked">${likedMovieList[count]}</li></a>`
         count++;
        }   
     }
