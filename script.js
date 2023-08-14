@@ -80,7 +80,7 @@ function displayMovies(movieList){
 
 // Fetch Movies based on Search and call Display function to display Search Movies
 function fetchMovies(movieWant) {
-    fetch(`http://www.omdbapi.com/?s=${movieWant}&apikey=1e6d9e90`).then((response) => {
+    fetch(`https://www.omdbapi.com/?s=${movieWant}&apikey=1e6d9e90`).then((response) => {
         return response.json();
     }).then((data) => {
         if (data.Search) {
